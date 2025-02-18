@@ -25,7 +25,9 @@ SECRET_KEY = 'django-insecure-2zvjwk@#-gbomge2(rv8g6^v(&m3zv1o+q279jm^(=1md_-n=q
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "*"
+]
  
 # Connect to MongoDB
 # MongoDB Configuration
