@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Enter Your Email</title>
+</head>
+<body>
+    <h2>Subscribe to Our Newsletter</h2>
+    <form action="/send-email/" method="POST">
+        {% csrf_token %}
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

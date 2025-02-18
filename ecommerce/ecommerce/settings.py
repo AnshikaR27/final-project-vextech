@@ -26,17 +26,19 @@ SECRET_KEY = 'django-insecure-2zvjwk@#-gbomge2(rv8g6^v(&m3zv1o+q279jm^(=1md_-n=q
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
-
-# Application definition
+ 
+# Connect to MongoDB
+# MongoDB Configuration
 
 INSTALLED_APPS = [
+    'ecomsite',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
@@ -48,6 +50,13 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = "artjournalbyanshika@gmail.com"  # Change to your email
+EMAIL_HOST_PASSWORD = "ttjr jhiy bwyp vqfe"  # Use an App Password
 
 ROOT_URLCONF = 'ecommerce.urls'
 
@@ -73,12 +82,13 @@ WSGI_APPLICATION = 'ecommerce.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# MongoDB Configuration
+MONGO_DB_NAME = "finalProject"  # Replace with your database name
+MONGO_HOST = "localhost"
+MONGO_PORT = 27017
+MONGO_USER = ""  # If you have authentication, add username
+MONGO_PASSWORD = ""  # Add password if required
+MONGO_URI = "mongodb+srv://anshika:anshika27@anshika.a6yej.mongodb.net/?retryWrites=true&w=majority&appName=anshika"
 
 
 # Password validation
